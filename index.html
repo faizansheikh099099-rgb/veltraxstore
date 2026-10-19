@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="VELTRAX — Wear Your Edge. Discover the AFTER HOURS collection.">
+<title>VELTRAX — Wear Your Edge.</title>
+<style>
+:root{--bg:#090909;--panel:#11110f;--ivory:#eee7d9;--muted:#a9a294;--line:#33312c;--olive:#5e6250}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ivory);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+.announcement{padding:9px 14px;text-align:center;background:var(--ivory);color:#111;font-size:10px;letter-spacing:2px;font-weight:700}
+header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5.5%;border-bottom:1px solid #24231f;position:sticky;top:0;background:rgba(9,9,9,.94);backdrop-filter:blur(10px);z-index:10}
+.menu-btn,.bag-btn{border:0;background:none;color:var(--ivory);font-size:12px;letter-spacing:1px;padding:10px 0}.wordmark{font-size:21px;letter-spacing:7px;font-weight:700;text-align:center}.tagline{font-size:8px;letter-spacing:3px;color:var(--muted);margin-top:6px;text-align:center}.nav{display:flex;gap:24px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#d1c9ba}.nav a:hover{color:white}
+.hero{min-height:600px;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.hero-copy{padding:90px 8% 75px 11%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.eyebrow{font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase}
+h1{font-size:clamp(48px,6.6vw,92px);line-height:.91;letter-spacing:-4px;font-weight:500;margin:25px 0 20px}h1 span{color:#aaa08f}
+.hero-copy p{color:#bcb4a6;line-height:1.8;font-size:13px;max-width:340px;margin:0 0 30px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 23px;border:1px solid var(--ivory);font-size:10px;letter-spacing:1.7px;text-transform:uppercase;background:var(--ivory);color:#111;font-weight:700}.btn.outline{background:transparent;color:var(--ivory)}.btn:hover{opacity:.82}
+.hero-art{position:relative;min-height:500px;overflow:hidden;background:radial-gradient(ellipse at 55% 35%,#33312b 0,#171714 35%,#090909 73%)}
+.art-glow{position:absolute;width:65%;height:70%;border:1px solid #555044;transform:rotate(16deg);top:12%;left:18%;opacity:.5}
+.tee{position:absolute;top:15%;left:50%;transform:translateX(-50%);width:min(68%,390px);height:70%;background:linear-gradient(110deg,#171716,#292824 45%,#111110);clip-path:polygon(27% 0,39% 7%,61% 7%,73% 0,100% 16%,84% 38%,72% 29%,76% 100%,24% 100%,28% 29%,16% 38%,0 16%);filter:drop-shadow(0 25px 20px #000);border:1px solid #444}
+.tee:after{content:"V";position:absolute;top:39%;left:50%;transform:translate(-50%,-50%);font-family:Georgia,serif;font-size:45px;color:#d6cdbd;font-weight:bold;letter-spacing:-8px}
+.art-caption{position:absolute;bottom:24px;left:24px;right:24px;display:flex;justify-content:space-between;color:#c9c0b1;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.section{padding:75px 6%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}.section h2{font-size:clamp(28px,4vw,44px);font-weight:500;letter-spacing:-1.5px;margin:10px 0 0}.section-head p{color:var(--muted);font-size:12px;line-height:1.7;max-width:280px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.product{min-width:0}.product-image{height:360px;background:#151513;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #272620}.product-image:before{content:"";position:absolute;width:80%;height:90%;background:radial-gradient(ellipse at center,#34332e 0,#191917 58%,#10100f 75%);border-radius:50%;filter:blur(15px)}
+.product-shirt{position:relative;width:60%;height:67%;background:linear-gradient(100deg,var(--shirt-a),var(--shirt-b),var(--shirt-c));clip-path:polygon(27% 0,39% 7%,61% 7%,73% 0,100% 16%,84% 38%,72% 29%,76% 100%,24% 100%,28% 29%,16% 38%,0 16%);filter:drop-shadow(0 16px 12px #000)}
+.product-shirt:after{content:"V";position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);font-family:Georgia,serif;color:#d9d0c0;font-size:24px;font-weight:bold}
+.product:nth-child(2) .product-shirt:after{color:#35332e}.product:nth-child(3) .product-shirt:after{color:#e4dccb}
+.product-badge{position:absolute;top:12px;left:12px;border:1px solid #676155;padding:7px 9px;font-size:8px;letter-spacing:1.5px}
+.product-info{display:flex;justify-content:space-between;gap:10px;padding:15px 1px 0}.product-info h3{font-size:12px;letter-spacing:1px;margin:0 0 7px;font-weight:600}.product-info p{font-size:11px;color:var(--muted);margin:0}.price{font-size:12px;white-space:nowrap}
+.product-controls{margin-top:14px;display:flex;gap:7px;align-items:center}.swatch{width:20px;height:20px;border-radius:50%;border:1px solid #777;display:inline-block;cursor:pointer;outline:1px solid transparent;outline-offset:3px}.swatch.active{outline-color:var(--ivory)}.size-select{margin-left:auto;background:#111;color:var(--ivory);border:1px solid #45423b;padding:8px;font-size:10px}
+.add-btn{width:100%;margin-top:10px;background:transparent;border:1px solid #504c43;color:var(--ivory);padding:12px;font-size:9px;letter-spacing:1.5px}.add-btn:hover{background:var(--ivory);color:#111}
+.manifesto{background:#e9e1d3;color:#111;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;padding:70px 8%}.manifesto h2{font-size:clamp(35px,5vw,60px);line-height:.98;letter-spacing:-2px;font-weight:500;margin:14px 0}.manifesto p{font-size:13px;line-height:1.9;max-width:410px;color:#454139}.manifesto .eyebrow{color:#5b554b}
+.manifesto-mark{font-size:clamp(110px,22vw,250px);font-family:Georgia,serif;text-align:center;color:#151513;letter-spacing:-25px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.feature{padding:25px 15px;text-align:center;border-right:1px solid var(--line)}.feature:last-child{border:0}.feature strong{font-size:10px;letter-spacing:1.5px}.feature p{font-size:11px;color:var(--muted);line-height:1.6}
+footer{padding:45px 6% 25px}.footer-top{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;padding-bottom:35px}.footer-note{color:var(--muted);font-size:11px;line-height:1.8;max-width:280px}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:10px;letter-spacing:1px;color:#c9c0b1}.copyright{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:10px;color:#80796e;font-size:9px;letter-spacing:1px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ivory);color:#111;padding:13px 18px;font-size:12px;z-index:20;box-shadow:0 10px 40px #0008;display:none}.toast.show{display:block}
+@media(max-width:700px){header{height:65px;padding:0 18px}.nav{display:none}.wordmark{font-size:17px;letter-spacing:4px}.menu-btn,.bag-btn{font-size:9px}.hero{grid-template-columns:1fr}.hero-copy{padding:65px 25px 45px}.hero-art{min-height:390px;grid-row:1}.hero-copy h1{font-size:62px}.section{padding:55px 18px}.section-head{align-items:flex-start;flex-direction:column}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 10px}.product-image{height:245px}.product-info{flex-direction:column;gap:7px}.product-info h3{font-size:10px}.price{font-size:11px}.product-controls{gap:6px}.size-select{max-width:86px}.manifesto{grid-template-columns:1fr;padding:55px 24px}.manifesto-mark{grid-row:1;font-size:130px}.features{grid-template-columns:1fr}.feature{border-right:0;border-bottom:1px solid var(--line);padding:18px}.feature:last-child{border-bottom:0}.copyright{flex-direction:column}.section h2{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="announcement">THE FIRST DROP — AFTER HOURS. &nbsp; | &nbsp; VELTRAX</div>
+<header>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰ MENU</button>
+  <a href="#" class="brand" aria-label="VELTRAX home"><div class="wordmark">VELTRAX</div><div class="tagline">WEAR YOUR EDGE.</div></a>
+  <button class="bag-btn" id="bagBtn">BAG (<span id="bagCount">0</span>)</button>
+  <nav class="nav" id="nav"><a href="#collection">Shop</a><a href="#story">Our direction</a><a href="#footer">Contact</a></nav>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Collection 001 / New uniform</div>
+    <h1>AFTER<br><span>HOURS.</span></h1>
+    <p>Built for your own direction. Everyday streetwear, considered details, and a mindset that doesn't need permission.</p>
+    <div class="actions"><a class="btn" href="#collection">Explore the drop ↗</a><a class="btn outline" href="#story">Our direction</a></div>
+  </div>
+  <div class="hero-art" aria-label="Abstract black VELTRAX T-shirt illustration"><div class="art-glow"></div><div class="tee"></div><div class="art-caption"><span>VELTRAX / 001</span><span>Wear your edge.</span></div></div>
+</section>
+<section class="section" id="collection">
+  <div class="section-head"><div><div class="eyebrow">First collection</div><h2>THE AFTER HOURS DROP</h2></div><p>Three considered colourways. One unmistakable point of view.</p></div>
+  <div class="products">
+    <article class="product" data-name="The Core Tee — Black">
+      <div class="product-image" style="--shirt-a:#090909;--shirt-b:#242320;--shirt-c:#111"><span class="product-badge">001 / BLACK</span><div class="product-shirt"></div></div>
+      <div class="product-info"><div><h3>THE CORE TEE</h3><p>Black · Oversized fit</p></div><span class="price">Price soon</span></div>
+      <div class="product-controls"><button class="swatch active" style="background:#111" aria-label="Black" title="Black"></button><button class="swatch" style="background:#e8e0d2" aria-label="Stone White" title="Stone White"></button><button class="swatch" style="background:#626550" aria-label="Washed Olive" title="Washed Olive"></button><select class="size-select" aria-label="Choose size"><option>Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div>
+      <button class="add-btn">ADD TO BAG +</button>
+    </article>
+    <article class="product" data-name="The Core Tee — Stone">
+      <div class="product-image" style="--shirt-a:#bdb5a6;--shirt-b:#eee7d9;--shirt-c:#cfc7b8"><span class="product-badge">002 / STONE</span><div class="product-shirt"></div></div>
+      <div class="product-info"><div><h3>THE CORE TEE</h3><p>Stone · Oversized fit</p></div><span class="price">Price soon</span></div>
+      <div class="product-controls"><button class="swatch" style="background:#111" aria-label="Black" title="Black"></button><button class="swatch active" style="background:#e8e0d2" aria-label="Stone White" title="Stone White"></button><button class="swatch" style="background:#626550" aria-label="Washed Olive" title="Washed Olive"></button><select class="size-select" aria-label="Choose size"><option>Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div>
+      <button class="add-btn">ADD TO BAG +</button>
+    </article>
+    <article class="product" data-name="The Core Tee — Washed Olive">
+      <div class="product-image" style="--shirt-a:#454838;--shirt-b:#747660;--shirt-c:#545846"><span class="product-badge">003 / OLIVE</span><div class="product-shirt"></div></div>
+      <div class="product-info"><div><h3>THE CORE TEE</h3><p>Washed Olive · Oversized fit</p></div><span class="price">Price soon</span></div>
+      <div class="product-controls"><button class="swatch" style="background:#111" aria-label="Black" title="Black"></button><button class="swatch" style="background:#e8e0d2" aria-label="Stone White" title="Stone White"></button><button class="swatch active" style="background:#626550" aria-label="Washed Olive" title="Washed Olive"></button><select class="size-select" aria-label="Choose size"><option>Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div>
+      <button class="add-btn">ADD TO BAG +</button>
+    </article>
+  </div>
+</section>
+<section class="manifesto" id="story">
+  <div><div class="eyebrow">The VELTRAX direction</div><h2>LESS NOISE.<br>MORE EDGE.</h2><p>We believe premium style should be felt in the details — the fit, the finish, and the confidence you carry. VELTRAX is being built around considered streetwear without the unnecessary noise.</p><a href="#collection" class="btn">Discover the collection ↗</a></div>
+  <div class="manifesto-mark" aria-label="V emblem">V.</div>
+</section>
+<section class="features">
+  <div class="feature"><strong>CONSIDERED FIT</strong><p>Relaxed, everyday silhouettes.</p></div><div class="feature"><strong>DETAIL OVER NOISE</strong><p>Minimal branding. Intentional design.</p></div><div class="feature"><strong>BUILT WITH PURPOSE</strong><p>A new independent streetwear label.</p></div>
+</section>
+</main>
+<footer id="footer"><div class="footer-top"><div><div class="wordmark">VELTRAX</div><div class="tagline" style="text-align:left">WEAR YOUR EDGE.</div><p class="footer-note">AFTER HOURS. — Collection 001.<br>Independent streetwear in the making.</p></div><div class="footer-links"><a href="#collection">SHOP</a><a href="#story">OUR DIRECTION</a><a href="mailto:hello@veltrax.example">CONTACT</a></div></div><div class="copyright"><span>© <span id="year"></span> VELTRAX</span><span>AFTER HOURS. / COLLECTION 001</span></div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const toast=document.getElementById('toast');let toastTimer;function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2300)}
+let bag=0;document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('menuBtn').addEventListener('click',()=>{const nav=document.getElementById('nav');if(window.innerWidth<=700){nav.style.display=nav.style.display==='flex'?'none':'flex';nav.style.position='absolute';nav.style.top='64px';nav.style.left='0';nav.style.right='0';nav.style.padding='20px';nav.style.background='#11110f';nav.style.flexDirection='column';nav.style.gap='20px'}else{showToast('Use the links to explore the collection.')}});
+document.querySelectorAll('.product').forEach(product=>{product.querySelectorAll('.swatch').forEach((swatch,index)=>swatch.addEventListener('click',()=>{product.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));swatch.classList.add('active');const colour=['Black','Stone White','Washed Olive'][index];product.querySelector('.product-info p').textContent=colour+' · Oversized fit';product.querySelector('.product-image').style.filter=index===1?'brightness(1.12)':index===2?'sepia(.18)':'none';product.dataset.name='The Core Tee — '+colour}));product.querySelector('.add-btn').addEventListener('click',()=>{const size=product.querySelector('select').value;if(size==='Size'){showToast('Please choose a size first.');return}bag++;document.getElementById('bagCount').textContent=bag;showToast(product.dataset.name+' · Size '+size+' added to demo bag.')})});
+document.getElementById('bagBtn').addEventListener('click',()=>showToast(bag?bag+' item(s) in your demo bag. Checkout is not connected yet.':'Your bag is empty.'));
+</script>
+</body>
+</html>
